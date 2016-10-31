@@ -40,6 +40,14 @@ public abstract class LazyFragment extends Fragment {
         }
     }
 
+    @Override public void onDestroyView() {
+        super.onDestroyView();
+        // 重置
+        isViewInit = false;
+        isFirstLoad = true;
+        isVisible = false;
+    }
+
     /**
      * Fragment布局ID
      */
